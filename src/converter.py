@@ -15,7 +15,8 @@ import click
                 help='What metric unit to convert to', 
                 required=True
 )
-def converter(source_unit_arg, target_unit_arg):
+def converter(  source_unit_arg, target_unit_arg):
+    """This program helps you to convert values from imperial units to metric and vice versa!"""
     source_unit_val = click.prompt('Source unit', type=float)
 
     if (source_unit_arg == 'ft' and target_unit_arg == 'm'):
