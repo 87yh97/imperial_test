@@ -16,10 +16,12 @@ import click
                 required=True
 )
 def converter(source_unit_arg, target_unit_arg):
-#    if source_unit_arg == 'ft':
     source_unit_val = click.prompt('Source unit', type=float)
-    print("Target unit value: {:f}".format(source_unit_val / 3.281))
 
+    if (source_unit_arg == 'ft' and target_unit_arg == 'm'):
+        print("Target unit value: {:f}".format(source_unit_val / 3.281))
+    elif (source_unit_arg == 'm' and target_unit_arg == 'ft'):
+        print("Target unit value: {:f}".format(source_unit_val * 3.281))
 
 
 
