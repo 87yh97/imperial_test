@@ -26,7 +26,9 @@ def converter(  source_unit_arg,
                 target_precision_arg
                 ):
     """This program helps you to convert values from imperial units to metric and vice versa!"""
+    print("Greetings to everbody! Welcome to the best converter in the world!")
     source_unit_val = click.prompt('Source unit', type=float)
+
 
     if (source_unit_arg == 'ft' and target_unit_arg == 'm'):
         print("Target unit value: ", end = "")
@@ -34,6 +36,7 @@ def converter(  source_unit_arg,
     elif (source_unit_arg == 'm' and target_unit_arg == 'ft'):
         print("Target unit value: ", end = "")
         print(round(source_unit_val * 3.281, target_precision_arg)) 
+
 
 
 
