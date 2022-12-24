@@ -20,9 +20,18 @@ from utils import *
                 help='How many digits of the resulting value to show',
                 type=int
 )
+@click.option(  '--log', 
+                'print_log_enabled', 
+                default=False,
+                is_flag = True,
+                show_default = True, 
+                help='Should program log conversions',
+                type=bool
+)
 def converter(  source_unit_arg, 
                 target_unit_arg, 
-                target_precision_arg
+                target_precision_arg,
+                print_log_enabled
                 ):
     """This program helps you to convert values from imperial units to metric and vice versa!"""
     
@@ -75,6 +84,10 @@ def converter(  source_unit_arg,
     print("Target unit value: ", end = "")
     print(round(result, target_precision_arg)) 
 
+    if (print_log_enabled):
+        f = open("log.txt", "a")
+        f.write("Converted " + str(source_unit_val) + " " + str(source_unit_arg) + " into " + str(round(result, target_precision_arg)) + " " + str(target_unit_arg) + "\n")
+        f.close()
 
 if __name__ == '__main__':
     converter()
