@@ -1,6 +1,5 @@
 import click
-
-
+from utils import *
 
 @click.command()
 @click.option(  '--from',
@@ -26,18 +25,55 @@ def converter(  source_unit_arg,
                 target_precision_arg
                 ):
     """This program helps you to convert values from imperial units to metric and vice versa!"""
+    
+
+    result = 0.0
+    universal_val = 0.0
+    source_unit_valid = False
+    target_unit_valid = False
+
+    units_list = []
+    units_list.append(inch_name_set)
+    units_list.append(foot_name_set)
+    units_list.append(yard_name_set)
+    units_list.append(mile_name_set)
+    units_list.append(millimetre_name_set)
+    units_list.append(centimetre_name_set)
+    units_list.append(metre_name_set)
+    units_list.append(kilometre_name_set)
+
+    for i, name_set in enumerate(units_list):
+        if (source_unit_arg in name_set):
+            source_unit_valid = True
+        if (target_unit_arg in name_set):
+            target_unit_valid = True
+    
+    if (not source_unit_valid):
+        print("Invalid source unit!")
+        return;
+
+    if (not target_unit_valid):
+        print("Invalid target unit!")
+        return;
+
     print("Greetings to everbody! Welcome to the best converter in the world!")
+
     source_unit_val = click.prompt('Source unit', type=float)
 
+    for i, name_set in enumerate(units_list):
+        if (source_unit_arg in name_set):
+            universal_val = source_unit_val * conversion_unit_list[i]
+            break
+    
 
-    if (source_unit_arg == 'ft' and target_unit_arg == 'm'):
-        print("Target unit value: ", end = "")
-        print(round(source_unit_val / 3.281, target_precision_arg)) 
-    elif (source_unit_arg == 'm' and target_unit_arg == 'ft'):
-        print("Target unit value: ", end = "")
-        print(round(source_unit_val * 3.281, target_precision_arg)) 
+    for i, name_set in enumerate(units_list):
+        if (target_unit_arg in name_set):
+            result = universal_val / conversion_unit_list[i]
+            break 
 
 
+    print("Target unit value: ", end = "")
+    print(round(result, target_precision_arg)) 
 
 
 if __name__ == '__main__':
