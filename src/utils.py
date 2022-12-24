@@ -12,50 +12,70 @@ inch_name_set = {
     'inch',
     'inches',
     'in',
-    'ins'
+    'ins',
+    'дюйм',
+    'дюймы'
 }
 foot_name_set = {
     'foot',
     'feet',
-    'ft'
+    'ft',
+    'фут',
+    'футы'
 }
 
 yard_name_set = {
     'yard',
     'yards',
     'yd',
-    'yds'
+    'yds',
+    'ярды',
+    'ярд'
 }
 
 mile_name_set = {
     'mile',
     'miles',
-    'mi'
+    'mi',
+    'миля',
+    'мили'
 }
 millimetre_name_set = {
     'millimeter',
     'mm',
     'millimeters',
-    'mms'
+    'mms',
+    'мм',
+    'миллиметр',
+    'миллиметры'
 }
 
 centimetre_name_set = {
     'centimeter',
     'cm',
     'centimeters',
-    'cms'
+    'cms',
+    'сантиметр',
+    'см',
+    'сантиметры'
 }
 
 metre_name_set = {
     'metre',
     'm',
     'metres',
-    'ms'
+    'ms',
+    'метр',
+    'м',
+    'метры'
 }
 
 kilometre_name_set = {
     'kilometre',
     'km',
     'kilometres',
-    'kms'
+    'kms',
+    'километр',
+    'километры',
+    'км'
 }
